@@ -1,20 +1,20 @@
 pipeline {
     agent {
-        label 'king'
+        label 'java'
     }
 
     environment {
-        TOMCAT_HOST = '172.31.3.184'
+        TOMCAT_HOST = '172.31.6.7'
         TOMCAT_USER = 'root'
-        TOMCAT_DIR = '/opt/apache-tomcat-8.5.98/webapps'
-        JAR_FILE = 'bus-booking-app-1.0-SNAPSHOT.jar'  // Replace with the actual name of your JAR file
+        TOMCAT_DIR = '/opt/apache-tomcat-10.1.49/webapps'
+        JAR_FILE = 'bus-booking-app-1.0-SNAPSHOT.war'  // Replace with the actual name of your JAR file
     }
 
     stages {
         stage('checkout') {
             steps {
                 sh 'rm -rf bus_booking'
-                sh 'git clone https://github.com/sudhasanshi/bus_booking.git'
+                sh 'git clone https://github.com/kavithakavi9493/bus_booking.git'
             }
         }
 
